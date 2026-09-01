@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fifteen Merges, Measured — Artem Trofymenko</title>
+<meta name="description" content="A checkable record of 15 merged pull requests in career-ops, an open-source project I do not own: the maintainer's own words, the measurements behind each change, and what I could not verify.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fifteen Merges, Measured">
+<meta property="og:description" content="15 merged PRs in a public repo I don't own. Every claim links to the thread where you can check it.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2213%22 font-size=%2213%22>&#128208;</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Source+Serif+4:opsz,wght@8..60,300;8..60,400;8..60,600&family=JetBrains+Mono:wght@400;500;700&display=swap">
+
+<style>
+:root {
+  --ground: #f6f8f7;
+  --surface: #ffffff;
+  --rule: #d6dedb;
+  --ink: #141a19;
+  --ink-soft: #4a5856;
+  --ink-faint: #77837f;
+  --accent: #0b5b58;
+  --accent-soft: #e2edeb;
+  --pass: #2c6e49;
+  --fail: #a02c22;
+  --shadow: 0 1px 0 rgba(20, 26, 25, .04);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0e1413;
+    --surface: #151d1c;
+    --rule: #2a3735;
+    --ink: #e7edeb;
+    --ink-soft: #a3b2ae;
+    --ink-faint: #7d8b87;
+    --accent: #58bdb4;
+    --accent-soft: #14312e;
+    --pass: #6fc191;
+    --fail: #e08b80;
+    --shadow: none;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0e1413;
+  --surface: #151d1c;
+  --rule: #2a3735;
+  --ink: #e7edeb;
+  --ink-soft: #a3b2ae;
+  --ink-faint: #7d8b87;
+  --accent: #58bdb4;
+  --accent-soft: #14312e;
+  --pass: #6fc191;
+  --fail: #e08b80;
+  --shadow: none;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.62;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 0 28px 96px;
+}
+
+.col { max-width: 64ch; }
+
+/* ── masthead ─────────────────────────────── */
+
+.masthead {
+  padding: 72px 0 34px;
+  border-bottom: 2px solid var(--ink);
+}
+.eyebrow {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 18px;
+}
+h1 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(44px, 7vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -.015em;
+  margin: 0 0 20px;
+  text-wrap: balance;
+}
+h1 em { font-style: italic; color: var(--accent); }
+.standfirst {
+  font-size: 19.5px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  margin: 0;
+  max-width: 58ch;
+}
+
+/* ── figures strip ────────────────────────── */
+
+.figures {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(132px, 1fr));
+  gap: 0;
+  border-bottom: 1px solid var(--rule);
+  margin-bottom: 56px;
+}
+.fig {
+  padding: 22px 20px 24px;
+  border-right: 1px solid var(--rule);
+}
+.fig:last-child { border-right: none; }
+.fig b {
+  display: block;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 30px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -.02em;
+  color: var(--ink);
+}
+.fig span {
+  display: block;
+  margin-top: 5px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 10.5px;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ── sections ─────────────────────────────── */
+
+section { margin-bottom: 60px; }
+
+h2 {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 31px;
+  line-height: 1.2;
+  margin: 0 0 6px;
+  letter-spacing: -.01em;
+}
+.sect-note {
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 22px;
+}
+p { margin: 0 0 18px; }
+a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 2px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+/* ── quotes ───────────────────────────────── */
+
+.quote {
+  border-left: 2px solid var(--accent);
+  padding: 2px 0 2px 22px;
+  margin: 0 0 26px;
+}
+.quote p {
+  font-size: 18.5px;
+  line-height: 1.5;
+  margin: 0 0 9px;
+}
+.quote cite {
+  font-style: normal;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 11.5px;
+  color: var(--ink-faint);
+  letter-spacing: .02em;
+}
+.quote cite a { color: var(--ink-faint); }
+
+/* ── data ─────────────────────────────────── */
+
+.data-wrap { overflow-x: auto; margin: 0 0 24px; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+th {
+  text-align: left;
+  font-weight: 500;
+  font-size: 10.5px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  padding: 0 14px 9px 0;
+  border-bottom: 1px solid var(--rule);
+  white-space: nowrap;
+}
+td {
+  padding: 9px 14px 9px 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+  color: var(--ink-soft);
+}
+td.ref a { color: var(--accent); text-decoration: none; }
+td.ref a:hover { text-decoration: underline; }
+td.what { color: var(--ink); }
+tr:last-child td { border-bottom: none; }
+
+pre {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  box-shadow: var(--shadow);
+  padding: 16px 18px;
+  overflow-x: auto;
+  margin: 0 0 24px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12.5px;
+  line-height: 1.72;
+  font-variant-numeric: tabular-nums;
+  color: var(--ink-soft);
+}
+pre b { color: var(--ink); font-weight: 500; }
+pre .ok { color: var(--pass); }
+pre .no { color: var(--fail); }
+
+/* ── the limits block ─────────────────────── */
+
+.limits {
+  background: var(--accent-soft);
+  border-top: 2px solid var(--accent);
+  padding: 30px 30px 12px;
+  margin-bottom: 26px;
+}
+.limits h2 { margin-bottom: 4px; }
+.limits ul { margin: 0; padding-left: 20px; }
+.limits li { margin-bottom: 14px; color: var(--ink-soft); }
+.limits li b { color: var(--ink); font-weight: 600; }
+
+/* ── footer ───────────────────────────────── */
+
+footer {
+  border-top: 2px solid var(--ink);
+  padding-top: 24px;
+  font-family: "JetBrains Mono", ui-monospace, monospace;
+  font-size: 12px;
+  color: var(--ink-faint);
+  line-height: 1.8;
+}
+footer a { color: var(--accent); }
+
+@media (max-width: 620px) {
+  body { font-size: 16px; }
+  .wrap { padding: 0 20px 64px; }
+  .limits { padding: 24px 20px 8px; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="masthead">
+    <p class="eyebrow">Open-source contribution record · career-ops</p>
+    <h1>Fifteen merges,<br><em>every one measured</em></h1>
+    <p class="standfirst">Two weeks of work in a public repository I do not own. Every claim below links to the thread where you can check it, including the ones where the measurement went against me.</p>
+  </header>
+
+  <div class="figures">
+    <div class="fig"><b>15</b><span>PRs merged</span></div>
+    <div class="fig"><b>13</b><span>days</span></div>
+    <div class="fig"><b>3</b><span>bugs reported</span></div>
+    <div class="fig"><b>4</b><span>reviews of others</span></div>
+    <div class="fig"><b>0</b><span>reverted</span></div>
+  </div>
+
+  <section class="col">
+    <h2>The method</h2>
+    <p class="sect-note">Why the merge notes say what they say</p>
+    <p>Every change carries a number taken before and after, and a mutation that proves the new test fails when the thing it guards is broken. A test that has never been seen red is a test of nothing — so I break the feature on purpose and show the assertion going down with it.</p>
+    <p>The same rule runs backwards. Where I could not reproduce something, the comment says so in those words instead of implying I did. Twice that meant arguing against my own result.</p>
+  </section>
+
+  <section>
+    <h2>What the maintainer said</h2>
+    <p class="sect-note">Verbatim, from the merge notes</p>
+
+    <div class="quote">
+      <p>“Measured-not-reasoned on the actual machine it reproduces on is <b>the gold standard</b> — and choosing junctions over the issue's suggested guard because of what you measured is exactly the kind of divergence-with-evidence we want.”</p>
+      <cite><a href="https://github.com/career-ops-hq/career-ops/pull/3267">PR #3267</a> · a Windows test that never ran</cite>
+    </div>
+
+    <div class="quote">
+      <p>“The thing I want to name is the sentinel, because <b>almost nobody writes it</b>: this check only ever reports an <i>absence</i>, and you noticed that a wrong ROOT produces exactly the same reading as a clean tree. A guard that can pass by looking in the wrong place is the same bug it exists to prevent, one level up.”</p>
+      <cite><a href="https://github.com/career-ops-hq/career-ops/pull/3445">PR #3445</a> · a guard against untested tests</cite>
+    </div>
+
+    <div class="quote">
+      <p>“A delete-safety guard that dies on <span style="font-family:'JetBrains Mono',monospace;font-size:.92em">symlinkSync</span> in Windows' default configuration is a guard that <b>never guarded the platform most likely to need it</b>.”</p>
+      <cite><a href="https://github.com/career-ops-hq/career-ops/pull/3362">PR #3362</a> · protection against deleting a user's files</cite>
+    </div>
+
+    <div class="quote">
+      <p>“Reproducing your fix independently on Windows before reading it is <b>the review culture this repo hopes for</b>.”</p>
+      <cite><a href="https://github.com/career-ops-hq/career-ops/pull/3172">PR #3172</a> · a review of someone else's work</cite>
+    </div>
+
+    <div class="quote">
+      <p>“Two of them won't appear in the changelog at all, because a test or a refactor doesn't generate a line: Artem wrote the guard that stops a test suite from sitting somewhere nothing runs it. Both are <b>the kind of work that only shows up when it's missing</b>.”</p>
+      <cite>Release announcement, career-ops v1.31.0</cite>
+    </div>
+  </section>
+
+  <section>
+    <h2>The instrument</h2>
+    <p class="sect-note">One machine, three bugs no runner could see</p>
+    <div class="col">
+      <p>My development box is Windows 11 in a non-elevated shell with Developer Mode off — the default Windows install, and the one configuration the project's CI cannot reproduce, because GitHub's Windows runners hold a privilege ordinary machines do not.</p>
+      <p>Three separate failures lived there undetected. Each shipped green on all three CI platforms.</p>
+    </div>
+    <pre><b>tests/plugin-symlink-discovery.test.mjs</b>
+  before   EPERM at the first link, <span class="no">0 of 12</span> checks reached
+  after    <span class="ok">12 of 12</span> pass, 0 skipped
+  proof    reverting the feature turns 8 of the 12 red
+
+<b>tests/outcome.test.mjs</b>  — a guard against deleting a user's files
+  before   EPERM, <span class="no">0 of 58</span> checks reached
+  after    <span class="ok">58 of 58</span> pass
+  proof    with the guard weakened, the victim file is <span class="no">actually deleted</span>
+
+<b>tests/skill-project-root.test.mjs</b>  — reported as issue #3364
+  cause    git checks out 7 repository symlinks as pointer text
+  effect   the test reads 43 bytes of path instead of a 203-line document
+  runner   cannot reproduce: CI disables the setting that causes it</pre>
+    <div class="col">
+      <p>The third one I reported rather than fixed. Another contributor had claimed it an hour before the maintainer offered it to me, so I proposed a split instead — they implement, I verify on the box nobody else has. It merged as <a href="https://github.com/career-ops-hq/career-ops/pull/3456">their first contribution to the project</a>, and the verification step is now written into how that work is assigned.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>The fifteen</h2>
+    <p class="sect-note">18–30 August 2026 · grouped by what was wrong</p>
+    <div class="data-wrap">
+      <table>
+        <thead>
+          <tr><th>Ref</th><th>Class</th><th>What it fixed</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3445">#3445</a></td><td>Silent gap</td><td class="what">A test suite at the repo root that nothing ran</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3303">#3303</a></td><td>Silent gap</td><td class="what">20 assertions shipped to every user, never executed</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3362">#3362</a></td><td>Windows</td><td class="what">Delete-safety guard that never ran on Windows</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3267">#3267</a></td><td>Windows</td><td class="what">Plugin discovery suite dead on a default install</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3225">#3225</a></td><td>Matching</td><td class="what">A prefix for keywords that begin a longer word</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3297">#3297</a></td><td>Matching</td><td class="what">Documented the half that prefix cannot reach</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2970">#2970</a></td><td>Matching</td><td class="what">“Intern” no longer swallows “Internal”</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2702">#2702</a></td><td>Detection</td><td class="what">Concurrent openings misreported as reposts</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3171">#3171</a></td><td>Detection</td><td class="what">Multi-employer job boards skipped correctly</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2885">#2885</a></td><td>Liveness</td><td class="what">One dead host stopped poisoning every verdict</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2884">#2884</a></td><td>Liveness</td><td class="what">Postings inside same-origin frames now seen</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2956">#2956</a></td><td>Filtering</td><td class="what">An allow-list could discard a hard block</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3051">#3051</a></td><td>Filtering</td><td class="what">Matched the support role, not the whole domain</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3011">#3011</a></td><td>Isolation</td><td class="what">Ambient git config leaking into the test suite</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3050">#3050</a></td><td>Isolation</td><td class="what">Moved that regression where discovery finds it</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Work that isn't a pull request</h2>
+    <p class="sect-note">Reviews, and the measurements that changed a decision</p>
+    <div class="col">
+      <p>On <a href="https://github.com/career-ops-hq/career-ops/issues/3247">#3247</a> the reporter had ruled out the better of two fixes on a premise that turned out to be false — the test runner already did what they believed it could not. I posted the measurement and left the pull request to them. The maintainer changed the decision; they built it and cited the measurement by name.</p>
+      <p>On <a href="https://github.com/career-ops-hq/career-ops/pull/2983">#2983</a> someone moved a guard I had written into shared code and said the behaviour was unchanged. I compared old against new across nineteen documented edge cases — identical on all nineteen — which is what made it a same-day merge.</p>
+      <p>On <a href="https://github.com/career-ops-hq/career-ops/pull/3607">#3607</a> a change was justified by a claim about Windows filesystem timing. I measured it: directory timestamps resolve at about a millisecond, three orders of magnitude finer than the change assumed. The fix is still reasonable; the sentence explaining it was not.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Where this comes from</h2>
+    <p class="sect-note">Twenty years of operations, then the code</p>
+    <div class="col">
+      <p>I ran B2B businesses for two decades — manufacturing, production, cross-border commercial operations — before I wrote software for anyone but myself. That order matters to how the work above looks. An operator learns early that a report nobody checks is a report that is wrong, and that the expensive failures are the quiet ones: the alert that never fires, the guard that never guarded, the number that was true last quarter.</p>
+      <p>Every bug on this page is that shape. A suite that ran nowhere. A check that passed by looking in the wrong place. A safety guard that had never executed on the platform most likely to need it.</p>
+    </div>
+
+    <div class="data-wrap">
+      <table>
+        <thead><tr><th>Tool</th><th>What it does</th><th>Built on</th></tr></thead>
+        <tbody>
+          <tr><td class="ref"><a href="https://skusum.com">SkuSum</a></td><td class="what">Amazon profit by SKU, reconciled into a balanced journal</td><td>Local-first, browser only</td></tr>
+          <tr><td class="ref"><a href="https://www.readycsv.com">ReadyCSV</a></td><td class="what">CSV preflight and repair before a CRM import</td><td>No backend, no upload</td></tr>
+          <tr><td class="ref"><a href="https://revenueleakroast.netlify.app">Revenue Leak Roast</a></td><td class="what">Deterministic teardown of an offer before ad spend</td><td>Static, no runtime</td></tr>
+          <tr><td class="ref"><a href="https://www.leakrelay.com/">LeakRelay</a></td><td class="what">Missed call to qualified lead summary, for restoration firms</td><td>Twilio, owner-ready output</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="col">
+      <p>And a write-up of the working method itself: <a href="https://github.com/artemtrofymenko/agent-ops-notes">how I run a supervised multi-agent AI operation</a> — shared memory with a verified / not-verified handoff contract, supervision gates, and a weekly audit. The contract in that document is the reason this page has a section for what I could not verify.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="limits">
+      <h2>What I could not verify</h2>
+      <p class="sect-note">On the page, because it is on the threads</p>
+      <ul>
+        <li><b>A file symlink on Windows.</b> Creating one needs a privilege my shell lacks, so one hole a reviewer found in my own guard rests on documented behaviour and a related measurement, not on my reproducing it. I said so in the thread rather than implying otherwise.</li>
+        <li><b>A nine-assertion gap</b> between my test run and another contributor's on the same commit. We eliminated two causes with controls, found a third that explains a class but not their number, and recorded it open. The tree that produced it no longer exists, and testing a guess against a different one manufactures a cause.</li>
+        <li><b>My own diagnosis, once.</b> I concluded a credential had been rotated and wrote a runbook telling someone to go replace it. It was fine — my probe had never once succeeded, so its failure was a fact about the probe. I retracted it before anyone acted.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <p>This section exists because a record that only lists wins is a record you cannot calibrate. The same discipline that produced the merges produced these.</p>
+    </div>
+  </section>
+
+  <footer>
+    Artem Trofymenko · github.com/artemtrofymenko<br>
+    Repository: <a href="https://github.com/career-ops-hq/career-ops">career-ops-hq/career-ops</a> — open source, MIT, 194+ contributors<br>
+    Every number here is reproducible from the linked threads. Last checked 1 September 2026.
+  </footer>
+
+</div>
+</body>
+</html>
