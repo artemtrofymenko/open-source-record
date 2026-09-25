@@ -3,18 +3,18 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Fifteen Merges, Measured — Artem Trofymenko</title>
-<meta name="description" content="A checkable record of 15 merged pull requests in career-ops, an open-source project I do not own: the maintainer's own words, the measurements behind each change, and what I could not verify.">
+<title>Every Merge, Measured — Artem Trofymenko</title>
+<meta name="description" content="A checkable record of my merged pull requests in career-ops, an open-source project I do not own: the maintainer's own words, the measurements behind each change, and what I could not verify.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://artemtrofymenko.github.io/open-source-record/">
 <meta property="og:site_name" content="Artem Trofymenko">
 <meta property="og:image" content="https://artemtrofymenko.github.io/open-source-record/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Fifteen merges, every one measured - 15 PRs merged, 3 bugs reported, 4 reviews, 0 reverted">
+<meta property="og:image:alt" content="Every merge, measured - 17 PRs merged, 10 issues filed, 15 PRs reviewed, 0 reverted">
 <meta name="twitter:card" content="summary_large_image">
-<meta property="og:title" content="Fifteen Merges, Measured">
-<meta property="og:description" content="15 merged PRs in a public repo I don't own. Every claim links to the thread where you can check it.">
+<meta property="og:title" content="Every Merge, Measured">
+<meta property="og:description" content="Merged PRs in a public repo I don't own. Every claim links to the thread where you can check it.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 16 16%22><text y=%2213%22 font-size=%2213%22>&#128208;</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -280,16 +280,16 @@ footer a { color: var(--accent); }
 
   <header class="masthead">
     <p class="eyebrow">Open-source contribution record · career-ops</p>
-    <h1>Fifteen merges,<br><em>every one measured</em></h1>
-    <p class="standfirst">Two weeks of work in a public repository I do not own &mdash; 69,000 stars, 13,000 forks, five months old. Every claim below links to the thread where you can check it, including the ones where the measurement went against me.</p>
+    <h1>Every merge,<br><em>measured</em></h1>
+    <p class="standfirst">One month of work, 18 August to 18 September 2026, in a public repository I do not own &mdash; over 72,000 stars, over 13,600 forks, under six months old. Every claim below links to the thread where you can check it, including the ones where the measurement went against me.</p>
   </header>
 
   <div class="figures">
-    <div class="fig"><b>15</b><span>PRs merged</span></div>
-    <div class="fig"><b>13</b><span>days</span></div>
-    <div class="fig"><b>3</b><span>bugs reported</span></div>
-    <div class="fig"><b>4</b><span>reviews of others</span></div>
+    <div class="fig"><b>17</b><span>PRs merged</span></div>
+    <div class="fig"><b>10</b><span>issues filed, 9 resolved</span></div>
+    <div class="fig"><b>15</b><span>PRs reviewed</span></div>
     <div class="fig"><b>0</b><span>reverted</span></div>
+    <div class="fig"><b>19th</b><span>of 423 contributors by commits</span></div>
   </div>
 
   <section class="col">
@@ -321,6 +321,11 @@ footer a { color: var(--accent); }
     <div class="quote">
       <p>“Reproducing your fix independently on Windows before reading it is <b>the review culture this repo hopes for</b>.”</p>
       <cite><a href="https://github.com/career-ops-hq/career-ops/pull/3172">PR #3172</a> · a review of someone else's work</cite>
+    </div>
+
+    <div class="quote">
+      <p>“A timeout change is exactly the kind where <b>real numbers settle it and an argument does not</b>.”</p>
+      <cite><a href="https://github.com/career-ops-hq/career-ops/pull/4284">PR #4284</a> · a feed timeout, settled by six timed runs</cite>
     </div>
 
     <div class="quote">
@@ -356,8 +361,8 @@ footer a { color: var(--accent); }
   </section>
 
   <section>
-    <h2>The fifteen</h2>
-    <p class="sect-note">18–30 August 2026 · grouped by what was wrong</p>
+    <h2>The seventeen</h2>
+    <p class="sect-note">18 August – 18 September 2026 · grouped by what was wrong</p>
     <div class="data-wrap">
       <table>
         <thead>
@@ -373,8 +378,10 @@ footer a { color: var(--accent); }
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2970">#2970</a></td><td>Matching</td><td class="what">“Intern” no longer swallows “Internal”</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2702">#2702</a></td><td>Detection</td><td class="what">Concurrent openings misreported as reposts</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3171">#3171</a></td><td>Detection</td><td class="what">Multi-employer job boards skipped correctly</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3804">#3804</a></td><td>Discovery</td><td class="what">48 of a user's 62 BambooHR companies reported as “unknown, re-run” when the redirect was already the answer</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2885">#2885</a></td><td>Liveness</td><td class="what">One dead host stopped poisoning every verdict</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2884">#2884</a></td><td>Liveness</td><td class="what">Postings inside same-origin frames now seen</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4284">#4284</a></td><td>Reliability</td><td class="what">Large Lever boards timed out at the 10 s default; now 30 s, measured on a 42.8 MB board</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2956">#2956</a></td><td>Filtering</td><td class="what">An allow-list could discard a hard block</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3051">#3051</a></td><td>Filtering</td><td class="what">Matched the support role, not the whole domain</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3011">#3011</a></td><td>Isolation</td><td class="what">Ambient git config leaking into the test suite</td></tr>
@@ -384,10 +391,17 @@ footer a { color: var(--accent); }
     </div>
   </section>
 
+  <section class="col">
+    <h2>Issues from real use</h2>
+    <p class="sect-note">One day of use, five reports, all closed</p>
+    <p>On 14 September I ran the tool on my own job search and filed what broke as five issues in one day, <a href="https://github.com/career-ops-hq/career-ops/issues/4175">#4175</a> to <a href="https://github.com/career-ops-hq/career-ops/issues/4179">#4179</a>. All five were closed as completed by 24 September. <a href="https://github.com/career-ops-hq/career-ops/pull/4284">#4284</a> is mine and closed <a href="https://github.com/career-ops-hq/career-ops/issues/4177">#4177</a>, whose other half another contributor had already fixed. The rest were fixed by other contributors; one of those, <a href="https://github.com/career-ops-hq/career-ops/pull/4194">#4194</a>, I reviewed against the real pages before it merged.</p>
+  </section>
+
   <section>
     <h2>Work that isn't a pull request</h2>
     <p class="sect-note">Reviews, and the measurements that changed a decision</p>
     <div class="col">
+      <p>Fifteen pull requests reviewed so far, seven of them since merged. Three where a measurement changed the outcome:</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/issues/3247">#3247</a> the reporter had ruled out the better of two fixes on a premise that turned out to be false — the test runner already did what they believed it could not. I posted the measurement and left the pull request to them. The maintainer changed the decision; they built it and cited the measurement by name.</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/pull/2983">#2983</a> someone moved a guard I had written into shared code and said the behaviour was unchanged. I compared old against new across nineteen documented edge cases — identical on all nineteen — which is what made it a same-day merge.</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/pull/3607">#3607</a> a change was justified by a claim about Windows filesystem timing. I measured it: directory timestamps resolve at about a millisecond, three orders of magnitude finer than the change assumed. The fix is still reasonable; the sentence explaining it was not.</p>
@@ -436,8 +450,8 @@ footer a { color: var(--accent); }
 
   <footer>
     Artem Trofymenko · github.com/artemtrofymenko<br>
-    Repository: <a href="https://github.com/career-ops-hq/career-ops">career-ops-hq/career-ops</a> — open source, MIT, 194+ contributors<br>
-    Every number here is reproducible from the linked threads. Last checked 1 September 2026.
+    Repository: <a href="https://github.com/career-ops-hq/career-ops">career-ops-hq/career-ops</a> — open source, MIT, 423 contributors<br>
+    Every number here is reproducible from the linked threads. Last checked 25 September 2026.
   </footer>
 
 </div>
