@@ -286,10 +286,10 @@ footer a { color: var(--accent); }
 
   <div class="figures">
     <div class="fig"><b>17</b><span>PRs merged</span></div>
-    <div class="fig"><b>10</b><span>issues filed, 9 resolved</span></div>
+    <div class="fig"><b>10</b><span>issues filed, all resolved</span></div>
     <div class="fig"><b>15</b><span>PRs reviewed</span></div>
     <div class="fig"><b>0</b><span>reverted</span></div>
-    <div class="fig"><b>19th</b><span>of 423 contributors by commits</span></div>
+    <div class="fig"><b>20th</b><span>of 423 contributors by commits, tied</span></div>
   </div>
 
   <section class="col">
@@ -401,7 +401,7 @@ footer a { color: var(--accent); }
     <h2>Work that isn't a pull request</h2>
     <p class="sect-note">Reviews, and the measurements that changed a decision</p>
     <div class="col">
-      <p>Fifteen pull requests reviewed so far, seven of them since merged. Three where a measurement changed the outcome:</p>
+      <p>Fifteen pull requests reviewed so far, nine of them since merged. Three where a measurement changed the outcome:</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/issues/3247">#3247</a> the reporter had ruled out the better of two fixes on a premise that turned out to be false — the test runner already did what they believed it could not. I posted the measurement and left the pull request to them. The maintainer changed the decision; they built it and cited the measurement by name.</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/pull/2983">#2983</a> someone moved a guard I had written into shared code and said the behaviour was unchanged. I compared old against new across nineteen documented edge cases — identical on all nineteen — which is what made it a same-day merge.</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/pull/3607">#3607</a> a change was justified by a claim about Windows filesystem timing. I measured it: directory timestamps resolve at about a millisecond, three orders of magnitude finer than the change assumed. The fix is still reasonable; the sentence explaining it was not.</p>
