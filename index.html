@@ -8,10 +8,10 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://artemtrofymenko.github.io/open-source-record/">
 <meta property="og:site_name" content="Artem Trofymenko">
-<meta property="og:image" content="https://artemtrofymenko.github.io/open-source-record/og-20261005.png">
+<meta property="og:image" content="https://artemtrofymenko.github.io/open-source-record/og-20261016.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Every merge, measured - 23 PRs merged, 10 issues filed, 16 PRs reviewed, 0 reverted">
+<meta property="og:image:alt" content="Every merge, measured - 29 PRs merged, 12 issues filed, 17 PRs reviewed, 0 reverted">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="Every Merge, Measured">
 <meta property="og:description" content="Merged pull requests in a public repo I don't own. Every claim links to the thread where you can check it.">
@@ -281,15 +281,15 @@ footer a { color: var(--accent); }
   <header class="masthead">
     <p class="eyebrow">Open-source contribution record · career-ops</p>
     <h1>Every merge,<br><em>measured</em></h1>
-    <p class="standfirst">Under seven weeks of work, 18 August to 4 October 2026, in a public repository I do not own &mdash; over 73,000 stars, over 13,800 forks, six months old. Every claim below links to the thread where you can check it, including the ones where the measurement went against me.</p>
+    <p class="standfirst">Under eight weeks of work, 18 August to 12 October 2026, in a public repository I do not own &mdash; over 75,000 stars, over 14,000 forks, six months old. Every claim below links to the thread where you can check it, including the ones where the measurement went against me.</p>
   </header>
 
   <div class="figures">
-    <div class="fig"><b>23</b><span>PRs merged</span></div>
-    <div class="fig"><b>10</b><span>issues filed, all resolved</span></div>
-    <div class="fig"><b>16</b><span>PRs reviewed</span></div>
+    <div class="fig"><b>29</b><span>PRs merged</span></div>
+    <div class="fig"><b>12</b><span>issues filed, 11 resolved</span></div>
+    <div class="fig"><b>17</b><span>PRs reviewed</span></div>
     <div class="fig"><b>0</b><span>reverted</span></div>
-    <div class="fig"><b>18th</b><span>of 486 contributors by commits, tied</span></div>
+    <div class="fig"><b>17th</b><span>of 516 contributors by commits</span></div>
   </div>
 
   <section class="col">
@@ -339,6 +339,16 @@ footer a { color: var(--accent); }
     </div>
 
     <div class="quote">
+      <p>“Fixing it once for every suite, instead of test by test like #4707, <b>closes the whole class</b>.”</p>
+      <cite><a href="https://github.com/career-ops-hq/career-ops/pull/4892">PR #4892</a> · a test suite that could rewrite the user's tracker</cite>
+    </div>
+
+    <div class="quote">
+      <p>“The PR description <b>made this easy to check</b>: it names the two paths, which one skipped <span style="font-family:'JetBrains Mono',monospace;font-size:.92em">skipIds</span>, and the searches you ran before filing.”</p>
+      <cite><a href="https://github.com/career-ops-hq/career-ops/pull/4884">PR #4884</a> · health checks that ran a parser they were told to skip</cite>
+    </div>
+
+    <div class="quote">
       <p>“Two of them won't appear in the changelog at all, because a test or a refactor doesn't generate a line: Artem wrote the guard that stops a test suite from sitting somewhere nothing runs it. Both are <b>the kind of work that only shows up when it's missing</b>.”</p>
       <cite>Release announcement, career-ops v1.31.0</cite>
     </div>
@@ -372,8 +382,8 @@ footer a { color: var(--accent); }
   </section>
 
   <section>
-    <h2>The twenty-three</h2>
-    <p class="sect-note">18 August – 4 October 2026 · grouped by what was wrong</p>
+    <h2>The twenty-nine</h2>
+    <p class="sect-note">18 August – 12 October 2026 · grouped by what was wrong</p>
     <div class="data-wrap">
       <table>
         <thead>
@@ -383,6 +393,7 @@ footer a { color: var(--accent); }
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3445">#3445</a></td><td>Silent gap</td><td class="what">A test suite at the repo root that nothing ran</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3303">#3303</a></td><td>Silent gap</td><td class="what">20 assertions shipped to every user, never executed</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4511">#4511</a></td><td>Silent gap</td><td class="what">An anti-bot page read as an empty board with zero postings</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4814">#4814</a></td><td>Silent gap</td><td class="what">A report the health check could not inspect still ended in “All report links valid”</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3362">#3362</a></td><td>Windows</td><td class="what">Delete-safety guard that never ran on Windows</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3267">#3267</a></td><td>Windows</td><td class="what">Plugin discovery suite dead on a default install</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4739">#4739</a></td><td>Windows</td><td class="what">Three tests that failed every non-elevated Windows run</td></tr>
@@ -397,12 +408,17 @@ footer a { color: var(--accent); }
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2885">#2885</a></td><td>Liveness</td><td class="what">One dead host stopped poisoning every verdict</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2884">#2884</a></td><td>Liveness</td><td class="what">Postings inside same-origin frames now seen</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4284">#4284</a></td><td>Reliability</td><td class="what">Large Lever boards timed out at the 10 s default; now 30 s, measured on a 42.8 MB board</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5045">#5045</a></td><td>Reliability</td><td class="what">Three 404s on a later page retired a live iCIMS board for 30 days</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4519">#4519</a></td><td>Diagnostics</td><td class="what">A skipped report now says why and how to release it, with the guard left as strict as it was</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2956">#2956</a></td><td>Filtering</td><td class="what">An allow-list could discard a hard block</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3051">#3051</a></td><td>Filtering</td><td class="what">Matched the support role, not the whole domain</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4806">#4806</a></td><td>Filtering</td><td class="what">A Workable posting open in four countries kept only the first, so a UK block dropped it</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3011">#3011</a></td><td>Isolation</td><td class="what">Ambient git config leaking into the test suite</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3050">#3050</a></td><td>Isolation</td><td class="what">Moved that regression where discovery finds it</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4747">#4747</a></td><td>Isolation</td><td class="what">Test fixtures that could write into the contributor's own repository</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4892">#4892</a></td><td>Isolation</td><td class="what">A shell's CAREER_OPS_TRACKER let the test suite rewrite the user's real tracker</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4884">#4884</a></td><td>Isolation</td><td class="what">Health checks ran a local parser the skip list existed to keep out</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4779">#4779</a></td><td>Agent docs</td><td class="what">Agent instructions that contradicted the code, and a docs guard that failed on CLI-only installs</td></tr>
         </tbody>
       </table>
     </div>
@@ -418,7 +434,7 @@ footer a { color: var(--accent); }
     <h2>Work that isn't a pull request</h2>
     <p class="sect-note">Reviews, and the measurements that changed a decision</p>
     <div class="col">
-      <p>Sixteen pull requests reviewed so far, thirteen of them since merged. Three where a measurement changed the outcome:</p>
+      <p>Seventeen pull requests reviewed so far, sixteen of them since merged. Three where a measurement changed the outcome:</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/issues/3247">#3247</a> the reporter had ruled out the better of two fixes on a premise that turned out to be false — the test runner already did what they believed it could not. I posted the measurement and left the pull request to them. The maintainer changed the decision; they built it and cited the measurement by name.</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/pull/2983">#2983</a> someone moved a guard I had written into shared code and said the behaviour was unchanged. I compared old against new across nineteen documented edge cases — identical on all nineteen — which is what made it a same-day merge.</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/pull/3607">#3607</a> a change was justified by a claim about Windows filesystem timing. I measured it: directory timestamps resolve at about a millisecond, three orders of magnitude finer than the change assumed. The fix is still reasonable; the sentence explaining it was not.</p>
@@ -467,8 +483,8 @@ footer a { color: var(--accent); }
 
   <footer>
     Artem Trofymenko · github.com/artemtrofymenko<br>
-    Repository: <a href="https://github.com/career-ops-hq/career-ops">career-ops-hq/career-ops</a> — open source, MIT, 486 contributors<br>
-    Every number here is reproducible from the linked threads. Last checked 5 October 2026.
+    Repository: <a href="https://github.com/career-ops-hq/career-ops">career-ops-hq/career-ops</a> — open source, MIT, 516 contributors<br>
+    Every number here is reproducible from the linked threads. Last checked 16 October 2026.
   </footer>
 
 </div>
