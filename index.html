@@ -8,10 +8,10 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://artemtrofymenko.github.io/open-source-record/">
 <meta property="og:site_name" content="Artem Trofymenko">
-<meta property="og:image" content="https://artemtrofymenko.github.io/open-source-record/og-20261027.png">
+<meta property="og:image" content="https://artemtrofymenko.github.io/open-source-record/og-20261027b.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Every merge, measured - 45 PRs merged, 13 issues filed, 20 PRs reviewed, 0 reverted">
+<meta property="og:image:alt" content="Every merge, measured - 46 PRs merged, 13 issues filed, 20 PRs reviewed, 0 reverted">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="Every Merge, Measured">
 <meta property="og:description" content="Merged pull requests in a public repo I don't own. Every claim links to the thread where you can check it.">
@@ -285,11 +285,11 @@ footer a { color: var(--accent); }
   </header>
 
   <div class="figures">
-    <div class="fig"><b>45</b><span>PRs merged</span></div>
+    <div class="fig"><b>46</b><span>PRs merged</span></div>
     <div class="fig"><b>13</b><span>issues filed, 11 resolved</span></div>
     <div class="fig"><b>20</b><span>PRs reviewed</span></div>
     <div class="fig"><b>0</b><span>reverted</span></div>
-    <div class="fig"><b>14th</b><span>of 555 contributors by commits</span></div>
+    <div class="fig"><b>14th</b><span>of 556 contributors by commits</span></div>
   </div>
 
   <section class="col">
@@ -369,6 +369,11 @@ footer a { color: var(--accent); }
     </div>
 
     <div class="quote">
+      <p>“Another solid one from <b>the person who keeps the test suite honest across platforms</b>.”</p>
+      <cite><a href="https://github.com/career-ops-hq/career-ops/pull/6021">PR #6021</a> · ranker tests that never ran on Windows</cite>
+    </div>
+
+    <div class="quote">
       <p>“Two of them won't appear in the changelog at all, because a test or a refactor doesn't generate a line: Artem wrote the guard that stops a test suite from sitting somewhere nothing runs it. Both are <b>the kind of work that only shows up when it's missing</b>.”</p>
       <cite>Release announcement, career-ops v1.31.0</cite>
     </div>
@@ -402,7 +407,7 @@ footer a { color: var(--accent); }
   </section>
 
   <section>
-    <h2>The forty-five</h2>
+    <h2>The forty-six</h2>
     <p class="sect-note">18 August – 27 October 2026 · grouped by what was wrong · nine of them credited in the <a href="https://github.com/career-ops-hq/career-ops/releases/tag/career-ops-v1.38.0">v1.38.0 release notes</a></p>
     <div class="data-wrap">
       <table>
@@ -423,6 +428,7 @@ footer a { color: var(--accent); }
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5787">#5787</a></td><td>Windows</td><td class="what">The ranker reported every agent CLI npm had installed as missing</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5919">#5919</a></td><td>Windows</td><td class="what">Batch tailoring could not start an npm-installed claude</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6004">#6004</a></td><td>Windows</td><td class="what">A console window stayed open for as long as a JD was being archived</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6021">#6021</a></td><td>Windows</td><td class="what">Four ranker test suites skipped every case that starts a CLI on Windows; 21 of them now run</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3225">#3225</a></td><td>Matching</td><td class="what">A prefix for keywords that begin a longer word</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3297">#3297</a></td><td>Matching</td><td class="what">Documented the half that prefix cannot reach</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2970">#2970</a></td><td>Matching</td><td class="what">“Intern” no longer swallows “Internal”</td></tr>
@@ -491,7 +497,7 @@ footer a { color: var(--accent); }
         <thead><tr><th>Tool</th><th>What it does</th><th>Built on</th></tr></thead>
         <tbody>
           <tr><td class="ref"><a href="https://skusum.com">SkuSum</a></td><td class="what">Amazon profit by SKU, reconciled into a balanced journal</td><td>Local-first, browser only</td></tr>
-          <tr><td class="ref"><a href="https://www.readycsv.com">ReadyCSV</a></td><td class="what">CSV preflight and repair before a CRM import</td><td>No backend, no upload</td></tr>
+          <tr><td class="ref"><a href="https://www.readycsv.com">ReadyCSV</a></td><td class="what">CSV preflight and repair before a CRM import</td><td>Files stay in the browser, no upload</td></tr>
           <tr><td class="ref"><a href="https://revenueleakroast.netlify.app">Revenue Leak Roast</a></td><td class="what">Deterministic teardown of an offer before ad spend</td><td>Static, no runtime</td></tr>
           <tr><td class="ref"><a href="https://www.leakrelay.com/">LeakRelay</a></td><td class="what">Missed call to qualified lead summary, for restoration firms</td><td>Twilio, owner-ready output</td></tr>
         </tbody>
@@ -499,7 +505,7 @@ footer a { color: var(--accent); }
     </div>
 
     <div class="col">
-      <p>And a write-up of the working method itself: <a href="https://github.com/artemtrofymenko/agent-ops-notes">how I run a supervised multi-agent AI operation</a> — shared memory with a verified / not-verified handoff contract, supervision gates, and a weekly audit. The contract in that document is the reason this page has a section for what I could not verify.</p>
+      <p>And a write-up of the working method itself: <a href="https://github.com/artemtrofymenko/agent-ops-notes">How I Run AI Agents Like an Operations Team</a> — shared context, one writer per file, and a handoff that separates what was verified from what was not. That handoff is the reason this page has a section for what I could not verify.</p>
     </div>
   </section>
 
@@ -520,7 +526,7 @@ footer a { color: var(--accent); }
 
   <footer>
     Artem Trofymenko · github.com/artemtrofymenko<br>
-    Repository: <a href="https://github.com/career-ops-hq/career-ops">career-ops-hq/career-ops</a> — open source, MIT, 555 contributors<br>
+    Repository: <a href="https://github.com/career-ops-hq/career-ops">career-ops-hq/career-ops</a> — open source, MIT, 556 contributors<br>
     Every number here is reproducible from the linked threads. Last checked 27 October 2026.
   </footer>
 
