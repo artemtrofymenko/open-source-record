@@ -8,10 +8,10 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://artemtrofymenko.github.io/open-source-record/">
 <meta property="og:site_name" content="Artem Trofymenko">
-<meta property="og:image" content="https://artemtrofymenko.github.io/open-source-record/og-20261026.png">
+<meta property="og:image" content="https://artemtrofymenko.github.io/open-source-record/og-20261027.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Every merge, measured - 41 PRs merged, 13 issues filed, 20 PRs reviewed, 0 reverted">
+<meta property="og:image:alt" content="Every merge, measured - 45 PRs merged, 13 issues filed, 20 PRs reviewed, 0 reverted">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="Every Merge, Measured">
 <meta property="og:description" content="Merged pull requests in a public repo I don't own. Every claim links to the thread where you can check it.">
@@ -281,15 +281,15 @@ footer a { color: var(--accent); }
   <header class="masthead">
     <p class="eyebrow">Open-source contribution record · career-ops</p>
     <h1>Every merge,<br><em>measured</em></h1>
-    <p class="standfirst">Under ten weeks of work, 18 August to 25 October 2026, in a public repository I do not own &mdash; over 77,000 stars, over 14,000 forks, under seven months old. Every claim below links to the thread where you can check it, including the ones where the measurement went against me.</p>
+    <p class="standfirst">Ten weeks of work, 18 August to 27 October 2026, in a public repository I do not own &mdash; over 77,000 stars, over 14,000 forks, under seven months old. Every claim below links to the thread where you can check it, including the ones where the measurement went against me.</p>
   </header>
 
   <div class="figures">
-    <div class="fig"><b>41</b><span>PRs merged</span></div>
+    <div class="fig"><b>45</b><span>PRs merged</span></div>
     <div class="fig"><b>13</b><span>issues filed, 11 resolved</span></div>
     <div class="fig"><b>20</b><span>PRs reviewed</span></div>
     <div class="fig"><b>0</b><span>reverted</span></div>
-    <div class="fig"><b>14th</b><span>of 549 contributors by commits</span></div>
+    <div class="fig"><b>14th</b><span>of 555 contributors by commits</span></div>
   </div>
 
   <section class="col">
@@ -364,6 +364,11 @@ footer a { color: var(--accent); }
     </div>
 
     <div class="quote">
+      <p>“Proving that with tests after CodeRabbit raised the plain-http case is <b>what made the major bump safe to take</b>.”</p>
+      <cite><a href="https://github.com/career-ops-hq/career-ops/pull/6005">PR #6005</a> · a dependency upgrade that three automated bumps had failed</cite>
+    </div>
+
+    <div class="quote">
       <p>“Two of them won't appear in the changelog at all, because a test or a refactor doesn't generate a line: Artem wrote the guard that stops a test suite from sitting somewhere nothing runs it. Both are <b>the kind of work that only shows up when it's missing</b>.”</p>
       <cite>Release announcement, career-ops v1.31.0</cite>
     </div>
@@ -392,13 +397,13 @@ footer a { color: var(--accent); }
   runner   cannot reproduce: CI disables the setting that causes it</pre>
     <div class="col">
       <p>The third one I reported rather than fixed. Another contributor had claimed it an hour before the maintainer offered it to me, so I proposed a split instead — they implement, I verify on the box nobody else has. It merged as <a href="https://github.com/career-ops-hq/career-ops/pull/3456">their first contribution to the project</a>, and the verification step is now written into how that work is assigned.</p>
-      <p>The box kept finding them. In October it caught three more tests that created a symlink with no guard (<a href="https://github.com/career-ops-hq/career-ops/pull/4739">#4739</a>), and a test that started about 540 processes to draw 180 samples, so it timed out wherever starting a process is slow (<a href="https://github.com/career-ops-hq/career-ops/pull/4756">#4756</a>): about seven seconds before, a tenth of a second after. Later that month it found the Go dashboard and the Node scripts taking different locks for one tracker (<a href="https://github.com/career-ops-hq/career-ops/pull/5365">#5365</a>), and a ranker that reported every agent CLI npm had installed as missing (<a href="https://github.com/career-ops-hq/career-ops/pull/5787">#5787</a>).</p>
+      <p>The box kept finding them. In October it caught three more tests that created a symlink with no guard (<a href="https://github.com/career-ops-hq/career-ops/pull/4739">#4739</a>), and a test that started about 540 processes to draw 180 samples, so it timed out wherever starting a process is slow (<a href="https://github.com/career-ops-hq/career-ops/pull/4756">#4756</a>): about seven seconds before, a tenth of a second after. Later that month it found the Go dashboard and the Node scripts taking different locks for one tracker (<a href="https://github.com/career-ops-hq/career-ops/pull/5365">#5365</a>), and a ranker that reported every agent CLI npm had installed as missing (<a href="https://github.com/career-ops-hq/career-ops/pull/5787">#5787</a>). Then a console window that opened when a move to Interview from the web or the dashboard archived the posting, found because the test suite kept opening it on my own screen (<a href="https://github.com/career-ops-hq/career-ops/pull/6004">#6004</a>).</p>
     </div>
   </section>
 
   <section>
-    <h2>The forty-one</h2>
-    <p class="sect-note">18 August – 25 October 2026 · grouped by what was wrong · nine of them credited in the <a href="https://github.com/career-ops-hq/career-ops/releases/tag/career-ops-v1.38.0">v1.38.0 release notes</a></p>
+    <h2>The forty-five</h2>
+    <p class="sect-note">18 August – 27 October 2026 · grouped by what was wrong · nine of them credited in the <a href="https://github.com/career-ops-hq/career-ops/releases/tag/career-ops-v1.38.0">v1.38.0 release notes</a></p>
     <div class="data-wrap">
       <table>
         <thead>
@@ -416,6 +421,8 @@ footer a { color: var(--accent); }
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5365">#5365</a></td><td>Windows</td><td class="what">The Go dashboard and the Node scripts took different locks for one tracker, so they did not exclude each other</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5618">#5618</a></td><td>Windows</td><td class="what">A path-safety suite failed two of eight cases on an account without the symlink privilege</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5787">#5787</a></td><td>Windows</td><td class="what">The ranker reported every agent CLI npm had installed as missing</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5919">#5919</a></td><td>Windows</td><td class="what">Batch tailoring could not start an npm-installed claude</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6004">#6004</a></td><td>Windows</td><td class="what">A console window stayed open for as long as a JD was being archived</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3225">#3225</a></td><td>Matching</td><td class="what">A prefix for keywords that begin a longer word</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3297">#3297</a></td><td>Matching</td><td class="what">Documented the half that prefix cannot reach</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2970">#2970</a></td><td>Matching</td><td class="what">“Intern” no longer swallows “Internal”</td></tr>
@@ -428,10 +435,12 @@ footer a { color: var(--accent); }
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4284">#4284</a></td><td>Reliability</td><td class="what">Large Lever boards timed out at the 10 s default; now 30 s, measured on a 42.8 MB board</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5045">#5045</a></td><td>Reliability</td><td class="what">Three 404s on a later page retired a live iCIMS board for 30 days</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5349">#5349</a></td><td>Reliability</td><td class="what">A failed update left its checked-out files at the new version while the install still named the old one</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6005">#6005</a></td><td>Reliability</td><td class="what">undici moved from 6 to 7 with every proxied request still on a CONNECT tunnel, after three bumps to 8 broke the proxy test</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4519">#4519</a></td><td>Diagnostics</td><td class="what">A skipped report now says why and how to release it, with the guard left as strict as it was</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5353">#5353</a></td><td>Diagnostics</td><td class="what">On the supported Node floor, a failed suite printed no assertion message</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5517">#5517</a></td><td>Diagnostics</td><td class="what">A Windows-only failure named no case, and a cleanup error replaced its evidence</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5812">#5812</a></td><td>Diagnostics</td><td class="what">A suite killed for time was reported as “exit ?”</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5982">#5982</a></td><td>Diagnostics</td><td class="what">A writer timeout always read “hung”; it now says whether the writer was still starting, had exited, or was running</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2956">#2956</a></td><td>Filtering</td><td class="what">An allow-list could discard a hard block</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3051">#3051</a></td><td>Filtering</td><td class="what">Matched the support role, not the whole domain</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4806">#4806</a></td><td>Filtering</td><td class="what">A Workable posting open in four countries kept only the first, so a UK block dropped it</td></tr>
@@ -465,7 +474,7 @@ footer a { color: var(--accent); }
       <p>On <a href="https://github.com/career-ops-hq/career-ops/issues/3247">#3247</a> the reporter had ruled out the better of two fixes on a premise that turned out to be false — the test runner already did what they believed it could not. I posted the measurement and left the pull request to them. The maintainer changed the decision; they built it and cited the measurement by name.</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/pull/2983">#2983</a> someone moved a guard I had written into shared code and said the behaviour was unchanged. I compared old against new across nineteen documented edge cases — identical on all nineteen — which is what made it a same-day merge.</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/pull/3607">#3607</a> a change was justified by a claim about Windows filesystem timing. I measured it: directory timestamps resolve at about a millisecond, three orders of magnitude finer than the change assumed. The fix is still reasonable; the sentence explaining it was not.</p>
-      <p>And one where the measurement was simply the missing piece. The author of <a href="https://github.com/career-ops-hq/career-ops/pull/5712">#5712</a> listed Windows as not verified, so I ran the change there end to end, junctions and a real package install included. The maintainer's review opened by noting that it <a href="https://github.com/career-ops-hq/career-ops/pull/5712#pullrequestreview-5637403607">already had a Windows test run</a> from another contributor.</p>
+      <p>And one where the measurement was simply the missing piece. The author of <a href="https://github.com/career-ops-hq/career-ops/pull/5712">#5712</a> listed Windows as not verified, so I ran the change there end to end, junctions and a real package install included. The maintainer's review opened by noting that it <a href="https://github.com/career-ops-hq/career-ops/pull/5712#pullrequestreview-5637403607">already had a Windows test run</a> from another contributor. I ran it again on the next head, with a slow install racing a second session, and the next review said that run <a href="https://github.com/career-ops-hq/career-ops/pull/5712#pullrequestreview-5656202107">“helped a lot”</a>.</p>
     </div>
   </section>
 
@@ -511,8 +520,8 @@ footer a { color: var(--accent); }
 
   <footer>
     Artem Trofymenko · github.com/artemtrofymenko<br>
-    Repository: <a href="https://github.com/career-ops-hq/career-ops">career-ops-hq/career-ops</a> — open source, MIT, 549 contributors<br>
-    Every number here is reproducible from the linked threads. Last checked 26 October 2026.
+    Repository: <a href="https://github.com/career-ops-hq/career-ops">career-ops-hq/career-ops</a> — open source, MIT, 555 contributors<br>
+    Every number here is reproducible from the linked threads. Last checked 27 October 2026.
   </footer>
 
 </div>
