@@ -8,10 +8,10 @@
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://artemtrofymenko.github.io/open-source-record/">
 <meta property="og:site_name" content="Artem Trofymenko">
-<meta property="og:image" content="https://artemtrofymenko.github.io/open-source-record/og-20261027b.png">
+<meta property="og:image" content="https://artemtrofymenko.github.io/open-source-record/og-20261106.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Every merge, measured - 46 PRs merged, 13 issues filed, 20 PRs reviewed, 0 reverted">
+<meta property="og:image:alt" content="Every merge, measured - 59 PRs merged, 16 issues filed, 22 PRs reviewed, 0 reverted">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:title" content="Every Merge, Measured">
 <meta property="og:description" content="Merged pull requests in a public repo I don't own. Every claim links to the thread where you can check it.">
@@ -281,15 +281,15 @@ footer a { color: var(--accent); }
   <header class="masthead">
     <p class="eyebrow">Open-source contribution record · career-ops</p>
     <h1>Every merge,<br><em>measured</em></h1>
-    <p class="standfirst">Ten weeks of work, 18 August to 27 October 2026, in a public repository I do not own &mdash; over 77,000 stars, over 14,000 forks, under seven months old. Every claim below links to the thread where you can check it, including the ones where the measurement went against me.</p>
+    <p class="standfirst">Eleven weeks of work, 18 August to 6 November 2026, in a public repository I do not own &mdash; over 80,000 stars, over 14,000 forks, seven months old. Every claim below links to the thread where you can check it, including the ones where the measurement went against me.</p>
   </header>
 
   <div class="figures">
-    <div class="fig"><b>46</b><span>PRs merged</span></div>
-    <div class="fig"><b>13</b><span>issues filed, 11 resolved</span></div>
-    <div class="fig"><b>20</b><span>PRs reviewed</span></div>
+    <div class="fig"><b>59</b><span>PRs merged</span></div>
+    <div class="fig"><b>16</b><span>issues filed, 14 resolved</span></div>
+    <div class="fig"><b>22</b><span>PRs reviewed</span></div>
     <div class="fig"><b>0</b><span>reverted</span></div>
-    <div class="fig"><b>14th</b><span>of 556 contributors by commits</span></div>
+    <div class="fig"><b>13th</b><span>of 612 contributors by commits</span></div>
   </div>
 
   <section class="col">
@@ -374,6 +374,21 @@ footer a { color: var(--accent); }
     </div>
 
     <div class="quote">
+      <p>“Your fixes have been making the scripts more honest since August, and this one closes <b>a filter that looked like it worked and did nothing</b>.”</p>
+      <cite><a href="https://github.com/career-ops-hq/career-ops/pull/6303">PR #6303</a> · an age filter that had no date to act on</cite>
+    </div>
+
+    <div class="quote">
+      <p>“Across 40-plus merges <b>you keep following a bug to its real cause</b>, and tracing this one to the third place Hired was left out is a good example.”</p>
+      <cite><a href="https://github.com/career-ops-hq/career-ops/pull/6304">PR #6304</a> · a dashboard that sorted Hired below Rejected</cite>
+    </div>
+
+    <div class="quote">
+      <p>“Measuring a real tenant before and after, and closing the four review points with tests, is <b>what makes a parser like this easy to keep alive</b>.”</p>
+      <cite><a href="https://github.com/career-ops-hq/career-ops/pull/6394">PR #6394</a> · a new job-board provider</cite>
+    </div>
+
+    <div class="quote">
       <p>“Two of them won't appear in the changelog at all, because a test or a refactor doesn't generate a line: Artem wrote the guard that stops a test suite from sitting somewhere nothing runs it. Both are <b>the kind of work that only shows up when it's missing</b>.”</p>
       <cite>Release announcement, career-ops v1.31.0</cite>
     </div>
@@ -407,8 +422,8 @@ footer a { color: var(--accent); }
   </section>
 
   <section>
-    <h2>The forty-six</h2>
-    <p class="sect-note">18 August – 27 October 2026 · grouped by what was wrong · nine of them credited in the <a href="https://github.com/career-ops-hq/career-ops/releases/tag/career-ops-v1.38.0">v1.38.0 release notes</a></p>
+    <h2>The fifty-nine</h2>
+    <p class="sect-note">18 August – 6 November 2026 · grouped by what was wrong · nine of them credited in the <a href="https://github.com/career-ops-hq/career-ops/releases/tag/career-ops-v1.38.0">v1.38.0 release notes</a>, nineteen in <a href="https://github.com/career-ops-hq/career-ops/releases/tag/career-ops-v1.39.0">v1.39.0</a></p>
     <div class="data-wrap">
       <table>
         <thead>
@@ -419,6 +434,7 @@ footer a { color: var(--accent); }
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3303">#3303</a></td><td>Silent gap</td><td class="what">20 assertions shipped to every user, never executed</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4511">#4511</a></td><td>Silent gap</td><td class="what">An anti-bot page read as an empty board with zero postings</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4814">#4814</a></td><td>Silent gap</td><td class="what">A report the health check could not inspect still ended in “All report links valid”</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6303">#6303</a></td><td>Silent gap</td><td class="what">SmartRecruiters postings carried no date, so the age filters let a 2022 posting through</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3362">#3362</a></td><td>Windows</td><td class="what">Delete-safety guard that never ran on Windows</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3267">#3267</a></td><td>Windows</td><td class="what">Plugin discovery suite dead on a default install</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4739">#4739</a></td><td>Windows</td><td class="what">Three tests that failed every non-elevated Windows run</td></tr>
@@ -432,10 +448,15 @@ footer a { color: var(--accent); }
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3225">#3225</a></td><td>Matching</td><td class="what">A prefix for keywords that begin a longer word</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3297">#3297</a></td><td>Matching</td><td class="what">Documented the half that prefix cannot reach</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2970">#2970</a></td><td>Matching</td><td class="what">“Intern” no longer swallows “Internal”</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6155">#6155</a></td><td>Matching</td><td class="what">One contact written two Unicode ways became two cards with two IDs</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2702">#2702</a></td><td>Detection</td><td class="what">Concurrent openings misreported as reposts</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3171">#3171</a></td><td>Detection</td><td class="what">Multi-employer job boards skipped correctly</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6528">#6528</a></td><td>Detection</td><td class="what">“Acme Widgets” and “Acme Widgets, APC” on one role were never flagged as a likely duplicate</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3804">#3804</a></td><td>Discovery</td><td class="what">48 of a user's 62 BambooHR companies reported as “unknown, re-run” when the redirect was already the answer</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4559">#4559</a></td><td>Discovery</td><td class="what">An Avature board where every scan stopped with “no article could be parsed”</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6393">#6393</a></td><td>Discovery</td><td class="what">Example boards that had moved or gone empty, repointed with a note on where each one went</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6394">#6394</a></td><td>Discovery</td><td class="what">Careers sites on Factorial's ATS fell back to a web search; now read whole in one request</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6406">#6406</a></td><td>Discovery</td><td class="what">An old pinned posting stopped the Getro walk before the newer postings behind it</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2885">#2885</a></td><td>Liveness</td><td class="what">One dead host stopped poisoning every verdict</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2884">#2884</a></td><td>Liveness</td><td class="what">Postings inside same-origin frames now seen</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4284">#4284</a></td><td>Reliability</td><td class="what">Large Lever boards timed out at the 10 s default; now 30 s, measured on a 42.8 MB board</td></tr>
@@ -447,9 +468,11 @@ footer a { color: var(--accent); }
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5517">#5517</a></td><td>Diagnostics</td><td class="what">A Windows-only failure named no case, and a cleanup error replaced its evidence</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5812">#5812</a></td><td>Diagnostics</td><td class="what">A suite killed for time was reported as “exit ?”</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5982">#5982</a></td><td>Diagnostics</td><td class="what">A writer timeout always read “hung”; it now says whether the writer was still starting, had exited, or was running</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6306">#6306</a></td><td>Diagnostics</td><td class="what">A failed batch test gave a count, not the state file showing which row was extra</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/2956">#2956</a></td><td>Filtering</td><td class="what">An allow-list could discard a hard block</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3051">#3051</a></td><td>Filtering</td><td class="what">Matched the support role, not the whole domain</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4806">#4806</a></td><td>Filtering</td><td class="what">A Workable posting open in four countries kept only the first, so a UK block dropped it</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6485">#6485</a></td><td>Filtering</td><td class="what">A posting the employer's own board rejected on location came back in through a job board's copy</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3011">#3011</a></td><td>Isolation</td><td class="what">Ambient git config leaking into the test suite</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/3050">#3050</a></td><td>Isolation</td><td class="what">Moved that regression where discovery finds it</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4747">#4747</a></td><td>Isolation</td><td class="what">Test fixtures that could write into the contributor's own repository</td></tr>
@@ -461,6 +484,11 @@ footer a { color: var(--accent); }
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5567">#5567</a></td><td>Batch</td><td class="what">A checkout opened through a link handed the worker its own profile as if it were an override</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/5813">#5813</a></td><td>Batch</td><td class="what">A test waited 10 to 14 seconds for an offer its batch did not contain</td></tr>
           <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/4779">#4779</a></td><td>Agent docs</td><td class="what">Agent instructions that contradicted the code, and a docs guard that failed on CLI-only installs</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6307">#6307</a></td><td>Docs</td><td class="what">The scan-run log was documented with 15 of its 19 columns; a test now ties the list to the code</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6368">#6368</a></td><td>Docs</td><td class="what">The JD-archive check's docs left out the tracker join that decides whether a miss fails the run</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6304">#6304</a></td><td>Dashboard</td><td class="what">Hired rows sorted below Rejected and Discarded in the grouped view</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6367">#6367</a></td><td>Dashboard</td><td class="what">A long TL;DR was cut at 120 bytes, so Cyrillic or Chinese text ended in a broken character</td></tr>
+          <tr><td class="ref"><a href="https://github.com/career-ops-hq/career-ops/pull/6445">#6445</a></td><td>Translation</td><td class="what">Ukrainian interview modes: plain wording, and the same word for AI as the rest of the Ukrainian modes</td></tr>
         </tbody>
       </table>
     </div>
@@ -476,7 +504,7 @@ footer a { color: var(--accent); }
     <h2>Work that isn't a pull request</h2>
     <p class="sect-note">Reviews, and the measurements that changed a decision</p>
     <div class="col">
-      <p>Twenty pull requests reviewed so far, eighteen of them since merged. Three where a measurement changed the outcome:</p>
+      <p>Twenty-two pull requests reviewed so far, twenty-one of them since merged. Three where a measurement changed the outcome:</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/issues/3247">#3247</a> the reporter had ruled out the better of two fixes on a premise that turned out to be false — the test runner already did what they believed it could not. I posted the measurement and left the pull request to them. The maintainer changed the decision; they built it and cited the measurement by name.</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/pull/2983">#2983</a> someone moved a guard I had written into shared code and said the behaviour was unchanged. I compared old against new across nineteen documented edge cases — identical on all nineteen — which is what made it a same-day merge.</p>
       <p>On <a href="https://github.com/career-ops-hq/career-ops/pull/3607">#3607</a> a change was justified by a claim about Windows filesystem timing. I measured it: directory timestamps resolve at about a millisecond, three orders of magnitude finer than the change assumed. The fix is still reasonable; the sentence explaining it was not.</p>
@@ -526,8 +554,8 @@ footer a { color: var(--accent); }
 
   <footer>
     Artem Trofymenko · github.com/artemtrofymenko<br>
-    Repository: <a href="https://github.com/career-ops-hq/career-ops">career-ops-hq/career-ops</a> — open source, MIT, 556 contributors<br>
-    Every number here is reproducible from the linked threads. Last checked 27 October 2026.
+    Repository: <a href="https://github.com/career-ops-hq/career-ops">career-ops-hq/career-ops</a> — open source, MIT, 612 contributors<br>
+    Every number here is reproducible from the linked threads. Last checked 6 November 2026.
   </footer>
 
 </div>
